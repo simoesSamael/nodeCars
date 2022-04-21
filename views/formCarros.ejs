@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Carros</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+        <a href="/">Voltar</a>
+
+        <h1> <%= titulo %> </h1>
+        <p> Preencha os dados abaixo e clique em salvar </p>
+
+        <form action="<%=acao%>" method="post">
+            <table>
+                <tr>
+                    <td> Modeo </td>
+                    <td><input name="edtModelo"></td>
+                </tr>
+                <tr>
+                    <td>Ano</td>
+                    <td><input name="edtAno"></td>
+                </tr>
+                <tr>
+                    <td>Marca</td>
+                    <td>
+                        <select name="selMarca">
+                            <option value="1">Audi'</option>
+                            <option value="2">AUDI</option>
+                            <option value="3">Wolksvagem</option>
+                            <option value="4">Wolksvagem</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <a href="/">Cancelar</a> </td>
+                    <td> <input type="submit" value="salvar"> </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+
+

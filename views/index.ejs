@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de carros</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <h1>Listagem de carros</h1>
+    <p>Carros já cadastrados</p>
+
+    <table>
+      <thead>
+        <tr style="background-color: #CCC;">
+          <td>Modelo</td>
+          <td>Ano</td>
+          <td>Marca</td>
+          <td>Ações</td>
+        </tr>
+      </thead>
+      <!-------------------------------------->
+      <tbody>
+        <% if (!registros || registros.length == 0 ) { %>
+          <tr>
+            <td colspan="4">Nenhum registro cadastrado</td>
+          </tr>
+        <% } else { 
+          registros.forEach(function(carros){ %>
+          <tr>
+            <td><%= carros.modelo %> </td>
+            <td><%= carros.ano %></td>
+            <td><%= carros.marca %></td>
+            <td>
+              <a href="/alteraCarro/<%= carros.id %>"> Alterar </a>
+              <a href="/apagaCarro/<%= carros.id %>" onclick="return confirma('Confirma exclusão?');"> Apagar </a>
+            </td>        
+            
+          </tr>
+        <% })} %>
+      </tbody>
+      <!-------------------------------------->
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            <br>
+            <a href="/novoCarro">Cadastrar livro</a>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+  </body>
+</html>
+
+
